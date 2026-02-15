@@ -38,11 +38,12 @@ public class AsyncProcessor {
                 .thenApply(v -> completionOrder);
     }
 
-    
+    // Fail-Fast Policy: ensures atomic failure semantics across all services
     public CompletableFuture<String> processAsyncFailFast(
             List<Microservice> services,
             List<String> messages
     ) {
+        // Validate that services and messages lists are aligned before processing
         if (services.size() != messages.size()) {
             throw new IllegalArgumentException("services and messages must have the same size");
         }
