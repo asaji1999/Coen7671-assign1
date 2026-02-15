@@ -74,3 +74,5 @@ The policies define how the overall computation behaves when one or more microse
 - Calls are started concurrently via `CompletableFuture`.
 - Completion order is nondeterministic due to scheduling and varying delays.
 - Tests must not assume a fixed completion order unless explicitly designed.
+
+- Minor clarification added during review.
